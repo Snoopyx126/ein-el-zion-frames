@@ -23,7 +23,7 @@ const Navigation = () => {
             <img 
               src={logo} 
               alt="עין אל ציון Logo" 
-              className="h-16 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+              className="h-16 w-16 rounded-full object-cover cursor-pointer hover:opacity-80 transition-opacity"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             />
           </div>
@@ -34,32 +34,32 @@ const Navigation = () => {
               onClick={() => scrollToSection("home")}
               className="text-foreground hover:text-accent transition-colors duration-300"
             >
-              Home
+              בית
             </button>
             <button
               onClick={() => scrollToSection("collection")}
               className="text-foreground hover:text-accent transition-colors duration-300"
             >
-              Collection
+              קולקציה
             </button>
             <button
               onClick={() => scrollToSection("about")}
               className="text-foreground hover:text-accent transition-colors duration-300"
             >
-              About
+              אודות
             </button>
             <button
               onClick={() => scrollToSection("contact")}
               className="text-foreground hover:text-accent transition-colors duration-300"
             >
-              Contact
+              צור קשר
             </button>
             <Button 
               variant="hero" 
               size="lg"
               onClick={() => scrollToSection("contact")}
             >
-              Book Consultation
+              קביעת פגישת ייעוץ
             </Button>
           </div>
 
@@ -81,27 +81,27 @@ const Navigation = () => {
             <div className="flex flex-col gap-4">
               <button
                 onClick={() => scrollToSection("home")}
-                className="text-left text-foreground hover:text-accent transition-colors py-2"
+                className="text-right text-foreground hover:text-accent transition-colors py-2"
               >
-                Home
+                בית
               </button>
               <button
                 onClick={() => scrollToSection("collection")}
-                className="text-left text-foreground hover:text-accent transition-colors py-2"
+                className="text-right text-foreground hover:text-accent transition-colors py-2"
               >
-                Collection
+                קולקציה
               </button>
               <button
                 onClick={() => scrollToSection("about")}
-                className="text-left text-foreground hover:text-accent transition-colors py-2"
+                className="text-right text-foreground hover:text-accent transition-colors py-2"
               >
-                About
+                אודות
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="text-left text-foreground hover:text-accent transition-colors py-2"
+                className="text-right text-foreground hover:text-accent transition-colors py-2"
               >
-                Contact
+                צור קשר
               </button>
               <Button 
                 variant="hero" 
@@ -109,7 +109,7 @@ const Navigation = () => {
                 className="w-full"
                 onClick={() => scrollToSection("contact")}
               >
-                Book Consultation
+                קביעת פגישת ייעוץ
               </Button>
             </div>
           </div>

@@ -3,28 +3,84 @@ import { Card, CardContent } from "@/components/ui/card";
 import product1 from "@/assets/product-1.jpg";
 import product2 from "@/assets/product-2.jpg";
 import product3 from "@/assets/product-3.jpg";
+import product4 from "@/assets/product-4.jpg";
+import product5 from "@/assets/product-5.jpg";
+import product6 from "@/assets/product-6.jpg";
+import product7 from "@/assets/product-7.jpg";
+import product8 from "@/assets/product-8.jpg";
+import product9 from "@/assets/product-9.jpg";
+import product10 from "@/assets/product-10.jpg";
 
 const products = [
   {
     id: 1,
-    name: "Golden Aviator",
-    description: "Classic aviator style with premium gold metal frames",
+    name: "אוויאטור זהב",
+    description: "סגנון אוויאטור קלאסי עם מסגרת מתכת זהב איכותית",
     image: product1,
-    price: "Custom",
+    price: "התאמה אישית",
   },
   {
     id: 2,
-    name: "Tortoise Wayfarer",
-    description: "Timeless wayfarer design with elegant tortoiseshell pattern",
+    name: "וויפארר צבי",
+    description: "עיצוב וויפארר נצחי עם דוגמת צב אלגנטית",
     image: product2,
-    price: "Custom",
+    price: "התאמה אישית",
   },
   {
     id: 3,
-    name: "Gold Round Optical",
-    description: "Sophisticated round frames perfect for any occasion",
+    name: "עגול זהב אופטי",
+    description: "מסגרת עגולה מתוחכמת מושלמת לכל אירוע",
     image: product3,
-    price: "Custom",
+    price: "התאמה אישית",
+  },
+  {
+    id: 4,
+    name: "קט-איי שחור",
+    description: "משקפי קט-איי אלגנטיים עם פרטי זהב מעודנים",
+    image: product4,
+    price: "התאמה אישית",
+  },
+  {
+    id: 5,
+    name: "מלבני כסוף",
+    description: "משקפיים מלבניים מודרניים עם מסגרת כסף דקה",
+    image: product5,
+    price: "התאמה אישית",
+  },
+  {
+    id: 6,
+    name: "ספורטיבי שחור",
+    description: "משקפי שמש ספורטיביים עם עדשות כחולות מראה",
+    image: product6,
+    price: "התאמה אישית",
+  },
+  {
+    id: 7,
+    name: "עגול עור חום",
+    description: "משקפיים עגולים וינטאג' עם עטיפת עור חום",
+    image: product7,
+    price: "התאמה אישית",
+  },
+  {
+    id: 8,
+    name: "מרובע שקוף",
+    description: "משקפי שמש גדולים במסגרת קריסטל שקופה",
+    image: product8,
+    price: "התאמה אישית",
+  },
+  {
+    id: 9,
+    name: "משושה רוז גולד",
+    description: "משקפי שמש רטרו משושים עם עדשות ורודות",
+    image: product9,
+    price: "התאמה אישית",
+  },
+  {
+    id: 10,
+    name: "קלאבמאסטר שחור",
+    description: "משקפי קלאבמאסטר קלאסיים עם מסגרת שחורה וזהב",
+    image: product10,
+    price: "התאמה אישית",
   },
 ];
 
@@ -41,11 +97,11 @@ const Collection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6">
-            Our Collection
+            הקולקציה שלנו
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Each piece in our collection is designed to be personalized to your unique style. 
-            Choose your base design and let us customize it perfectly for you.
+            כל חתיכה בקולקציה שלנו מעוצבת להתאמה אישית לסגנון הייחודי שלך.
+            בחרו את העיצוב הבסיסי ואנחנו נתאים אותו במיוחד עבורכם.
           </p>
         </div>
 
@@ -54,7 +110,7 @@ const Collection = () => {
             <Card 
               key={product.id} 
               className="group hover:shadow-luxury transition-all duration-500 border-border overflow-hidden animate-scale-in"
-              style={{ animationDelay: `${index * 150}ms` }}
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               <CardContent className="p-0">
                 <div className="relative overflow-hidden aspect-square">
@@ -65,14 +121,14 @@ const Collection = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <div className="p-6">
+                <div className="p-6 text-right">
                   <h3 className="font-playfair text-2xl font-semibold text-foreground mb-2">
                     {product.name}
                   </h3>
                   <p className="text-muted-foreground mb-4">
                     {product.description}
                   </p>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between flex-row-reverse">
                     <span className="text-accent font-semibold text-lg">
                       {product.price}
                     </span>
@@ -81,7 +137,7 @@ const Collection = () => {
                       onClick={scrollToContact}
                       className="group-hover:shadow-gold-glow"
                     >
-                      Personalize
+                      התאמה אישית
                     </Button>
                   </div>
                 </div>
@@ -97,7 +153,7 @@ const Collection = () => {
             onClick={scrollToContact}
             className="text-lg px-10 py-6"
           >
-            Start Your Personalization Journey
+            התחילו את מסע ההתאמה האישית שלכם
           </Button>
         </div>
       </div>

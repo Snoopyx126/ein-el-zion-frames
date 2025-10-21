@@ -3,18 +3,18 @@ import { Eye, Sparkles, Users } from "lucide-react";
 const features = [
   {
     icon: Eye,
-    title: "Personalized Design",
-    description: "Every frame is customized to match your unique style, face shape, and personality.",
+    title: "עיצוב מותאם אישית",
+    description: "כל מסגרת מותאמת במיוחד לסגנון הייחודי שלך, צורת הפנים והאישיות שלך.",
   },
   {
     icon: Sparkles,
-    title: "Premium Materials",
-    description: "We use only the finest materials - premium metals, acetates, and polarized lenses.",
+    title: "חומרים איכוtiים",
+    description: "אנו משתמשים רק בחומרים האיכותיים ביותר - מתכות פרמיום, אצטטים ועדשות מקוטבות.",
   },
   {
     icon: Users,
-    title: "Expert Consultation",
-    description: "Work directly with our eyewear specialists to create your perfect pair.",
+    title: "ייעוץ מקצועי",
+    description: "עבדו ישירות עם מומחי המשקפיים שלנו ליצירת הזוג המושלם עבורכם.",
   },
 ];
 
@@ -24,12 +24,12 @@ const About = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6">
-            The Art of Personalization
+            אומנות ההתאמה האישית
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            At <span className="font-playfair text-accent font-semibold">עין אל ציון</span>, we believe that eyewear is more than just a functional accessory. 
-            It's an expression of who you are. That's why we dedicate ourselves to creating truly personalized pieces 
-            that reflect your individual style and vision.
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-right">
+            ב<span className="font-playfair text-accent font-semibold">עין אל ציון</span>, אנו מאמינים שמשקפיים הם יותר מסתם אביזר פונקציונלי.
+            זה ביטוי של מי שאתם. לכן אנו מקדישים את עצמנו ליצירת יצירות מותאמות אישית באמת
+            המשקפות את הסגנון והחזון האישיים שלכם.
           </p>
         </div>
 
@@ -58,10 +58,10 @@ const About = () => {
 
         <div className="max-w-4xl mx-auto text-center p-8 rounded-lg bg-gradient-primary text-primary-foreground animate-fade-in">
           <blockquote className="font-playfair text-2xl sm:text-3xl italic mb-6">
-            "Your eyes tell your story. Let us help you frame it perfectly."
+            "העיניים שלך מספרות את הסיפור שלך. תנו לנו לעזור לכם למסגר אותו בצורה מושלמת."
           </blockquote>
           <p className="text-lg opacity-90">
-            — The עין אל ציון Team
+            — צוות עין אל ציון
           </p>
         </div>
       </div>

@@ -31,7 +31,7 @@ const Hero = () => {
           Signez votre regard
         </p>
         <p className="text-lg sm:text-xl text-primary-foreground/90 max-w-2xl mx-auto mb-12 leading-relaxed">
-          Discover the art of personalized luxury eyewear. Each frame is crafted to reflect your unique style and vision.
+          גלו את אומנות המשקפיים המותאמים אישית. כל מסגרת מעוצבת כדי לשקף את הסגנון והחזון הייחודיים שלכם.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button 
@@ -40,7 +40,7 @@ const Hero = () => {
             onClick={scrollToCollection}
             className="text-lg px-8 py-6"
           >
-            Explore Collection
+            גלו את הקולקציה
           </Button>
           <Button 
             variant="hero" 
@@ -51,7 +51,7 @@ const Hero = () => {
             }}
             className="text-lg px-8 py-6"
           >
-            Book Consultation
+            קביעת פגישת ייעוץ
           </Button>
         </div>
       </div>

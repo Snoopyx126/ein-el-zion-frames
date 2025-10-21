@@ -19,12 +19,12 @@ const Contact = () => {
     
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
-      toast.error("Please fill in all required fields");
+      toast.error("אנא מלאו את כל השדות הנדרשים");
       return;
     }
 
     // Here you would typically send the form data to your backend
-    toast.success("Thank you! We'll be in touch soon to schedule your consultation.");
+    toast.success("תודה! ניצור איתכם קשר בקרוב לתיאום פגישת הייעוץ.");
     
     // Reset form
     setFormData({
@@ -47,11 +47,11 @@ const Contact = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6">
-            Begin Your Journey
+            התחילו את המסע שלכם
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Ready to create your perfect pair? Book a consultation with our eyewear specialists 
-            and let's bring your vision to life.
+            מוכנים ליצור את הזוג המושלם שלכם? קבעו פגישת ייעוץ עם מומחי המשקפיים שלנו
+            ובואו נביא את החזון שלכם לחיים.
           </p>
         </div>
 
@@ -61,8 +61,8 @@ const Contact = () => {
             <CardContent className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                    Name *
+                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2 text-right">
+                    שם מלא *
                   </label>
                   <Input
                     id="name"
@@ -70,15 +70,16 @@ const Contact = () => {
                     type="text"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Your full name"
+                    placeholder="השם המלא שלך"
                     required
-                    className="w-full"
+                    className="w-full text-right"
+                    dir="rtl"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                    Email *
+                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2 text-right">
+                    דוא"ל *
                   </label>
                   <Input
                     id="email"
@@ -93,8 +94,8 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                    Phone
+                  <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2 text-right">
+                    טלפון
                   </label>
                   <Input
                     id="phone"
@@ -102,23 +103,25 @@ const Contact = () => {
                     type="tel"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+972 XX XXX XXXX"
-                    className="w-full"
+                    placeholder="050-123-4567"
+                    className="w-full text-right"
+                    dir="rtl"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Message *
+                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2 text-right">
+                    הודעה *
                   </label>
                   <Textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Tell us about your style preferences and what you're looking for..."
+                    placeholder="ספרו לנו על העדפות הסגנון שלכם ומה אתם מחפשים..."
                     required
-                    className="w-full min-h-[150px]"
+                    className="w-full min-h-[150px] text-right"
+                    dir="rtl"
                   />
                 </div>
 
@@ -128,7 +131,7 @@ const Contact = () => {
                   size="lg" 
                   className="w-full text-lg"
                 >
-                  Book Your Consultation
+                  קביעת פגישת ייעוץ
                 </Button>
               </form>
             </CardContent>
@@ -136,24 +139,24 @@ const Contact = () => {
 
           {/* Contact Information */}
           <div className="space-y-8 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
-            <div>
+            <div className="text-right">
               <h3 className="font-playfair text-3xl font-semibold text-foreground mb-8">
-                Get in Touch
+                צרו קשר
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                Our eyewear specialists are here to help you find or create the perfect frames. 
-                Whether you're looking for something bold and statement-making or subtle and sophisticated, 
-                we'll guide you through every step of the personalization process.
+                מומחי המשקפיים שלנו כאן כדי לעזור לכם למצוא או ליצור את המסגרות המושלמות.
+                בין אם אתם מחפשים משהו נועז ובולט או עדין ומתוחכם,
+                אנו נדריך אתכם בכל שלב של תהליך ההתאמה האישית.
               </p>
             </div>
 
             <div className="space-y-6">
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 flex-row-reverse text-right">
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
                   <Mail className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-1">Email</h4>
+                  <h4 className="font-semibold text-foreground mb-1">דוא"ל</h4>
                   <a 
                     href="mailto:contact@eyealzion.com" 
                     className="text-muted-foreground hover:text-accent transition-colors"
@@ -163,40 +166,40 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 flex-row-reverse text-right">
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
                   <Phone className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-1">Phone</h4>
+                  <h4 className="font-semibold text-foreground mb-1">טלפון</h4>
                   <a 
-                    href="tel:+972123456789" 
+                    href="tel:+972501234567" 
                     className="text-muted-foreground hover:text-accent transition-colors"
                   >
-                    +972 12 345 6789
+                    050-123-4567
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 flex-row-reverse text-right">
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
                   <MapPin className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-1">Location</h4>
+                  <h4 className="font-semibold text-foreground mb-1">מיקום</h4>
                   <p className="text-muted-foreground">
-                    Tel Aviv, Israel
+                    תל אביב, ישראל
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 p-6 rounded-lg bg-secondary/50 border border-border">
+            <div className="mt-8 p-6 rounded-lg bg-secondary/50 border border-border text-right">
               <p className="text-sm text-muted-foreground">
-                <strong className="text-foreground">Consultation Hours:</strong><br />
-                Sunday - Thursday: 10:00 AM - 6:00 PM<br />
-                Friday: 10:00 AM - 2:00 PM<br />
-                Saturday: By appointment only
+                <strong className="text-foreground">שעות פגישות ייעוץ:</strong><br />
+                ראשון - חמישי: 10:00 - 18:00<br />
+                שישי: 10:00 - 14:00<br />
+                שבת: לפי תיאום מראש בלבד
               </p>
             </div>
           </div>
