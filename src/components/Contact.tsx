@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 
 const Contact = () => {
@@ -158,25 +159,27 @@ const Contact = () => {
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">דוא"ל</h4>
                   <a 
-                    href="mailto:contact@eyealzion.com" 
+                    href="mailto:Opticaltzion@gmail.com" 
                     className="text-muted-foreground hover:text-accent transition-colors"
                   >
-                    contact@eyealzion.com
+                    Opticaltzion@gmail.com
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-4 flex-row-reverse text-right">
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
-                  <Phone className="w-6 h-6 text-accent" />
+                  <MessageCircle className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-1">טלפון</h4>
+                  <h4 className="font-semibold text-foreground mb-1">ווטסאפ</h4>
                   <a 
-                    href="tel:+972501234567" 
+                    href="https://wa.me/33782548362" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-accent transition-colors"
                   >
-                    050-123-4567
+                    ‭+33 7 82 54 83 62‬
                   </a>
                 </div>
               </div>
