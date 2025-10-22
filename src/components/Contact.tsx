@@ -46,20 +46,20 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6">
+        <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
+          <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
             התחילו את המסע שלכם
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
             מוכנים ליצור את הזוג המושלם שלכם? קבעו פגישת ייעוץ עם מומחי המשקפיים שלנו
             ובואו נביא את החזון שלכם לחיים.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
           <Card className="shadow-luxury animate-scale-in">
-            <CardContent className="p-8">
+            <CardContent className="p-6 sm:p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2 text-right">
@@ -130,7 +130,7 @@ const Contact = () => {
                   type="submit" 
                   variant="luxury" 
                   size="lg" 
-                  className="w-full text-lg"
+                  className="w-full text-base sm:text-lg min-h-[48px] touch-manipulation"
                 >
                   קביעת פגישת ייעוץ
                 </Button>
@@ -139,58 +139,58 @@ const Contact = () => {
           </Card>
 
           {/* Contact Information */}
-          <div className="space-y-8 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
+          <div className="space-y-6 sm:space-y-8 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
             <div className="text-right">
-              <h3 className="font-playfair text-3xl font-semibold text-foreground mb-8">
+              <h3 className="font-playfair text-2xl sm:text-3xl font-semibold text-foreground mb-4 sm:mb-8">
                 צרו קשר
               </h3>
-              <p className="text-muted-foreground leading-relaxed mb-8">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6 sm:mb-8">
                 מומחי המשקפיים שלנו כאן כדי לעזור לכם למצוא או ליצור את המסגרות המושלמות.
                 בין אם אתם מחפשים משהו נועז ובולט או עדין ומתוחכם,
                 אנו נדריך אתכם בכל שלב של תהליך ההתאמה האישית.
               </p>
             </div>
 
-            <div className="space-y-6">
-              <div className="flex items-start gap-4 flex-row-reverse text-right">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-accent" />
+            <div className="space-y-5 sm:space-y-6">
+              <div className="flex items-start gap-3 sm:gap-4 flex-row-reverse text-right">
+                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                  <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
                 </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-1">דוא"ל</h4>
+                <div className="min-w-0">
+                  <h4 className="font-semibold text-foreground mb-1 text-sm sm:text-base">דוא"ל</h4>
                   <a 
                     href="mailto:Opticaltzion@gmail.com" 
-                    className="text-muted-foreground hover:text-accent transition-colors"
+                    className="text-sm sm:text-base text-muted-foreground hover:text-accent transition-colors break-all"
                   >
                     Opticaltzion@gmail.com
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 flex-row-reverse text-right">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
-                  <MessageCircle className="w-6 h-6 text-accent" />
+              <div className="flex items-start gap-3 sm:gap-4 flex-row-reverse text-right">
+                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                  <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-1">ווטסאפ</h4>
+                  <h4 className="font-semibold text-foreground mb-1 text-sm sm:text-base">ווטסאפ</h4>
                   <a 
                     href="https://wa.me/33782548362" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-accent transition-colors"
+                    className="text-sm sm:text-base text-muted-foreground hover:text-accent transition-colors inline-flex items-center gap-2 min-h-[44px]"
                   >
                     ‭+33 7 82 54 83 62‬
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 flex-row-reverse text-right">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
-                  <MapPin className="w-6 h-6 text-accent" />
+              <div className="flex items-start gap-3 sm:gap-4 flex-row-reverse text-right">
+                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                  <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-1">מיקום</h4>
-                  <p className="text-muted-foreground">
+                  <h4 className="font-semibold text-foreground mb-1 text-sm sm:text-base">מיקום</h4>
+                  <p className="text-sm sm:text-base text-muted-foreground">
                     תל אביב, ישראל
                   </p>
                 </div>

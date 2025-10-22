@@ -95,17 +95,17 @@ const Collection = () => {
   return (
     <section id="collection" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6">
+        <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
+          <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
             הקולקציה שלנו
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
             כל חתיכה בקולקציה שלנו מעוצבת להתאמה אישית לסגנון הייחודי שלך.
             בחרו את העיצוב הבסיסי ואנחנו נתאים אותו במיוחד עבורכם.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
           {products.map((product, index) => (
             <Card 
               key={product.id} 
@@ -121,21 +121,21 @@ const Collection = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <div className="p-6 text-right">
-                  <h3 className="font-playfair text-2xl font-semibold text-foreground mb-2">
+                <div className="p-4 sm:p-6 text-right">
+                  <h3 className="font-playfair text-xl sm:text-2xl font-semibold text-foreground mb-2">
                     {product.name}
                   </h3>
-                  <p className="text-muted-foreground mb-4">
+                  <p className="text-sm sm:text-base text-muted-foreground mb-4">
                     {product.description}
                   </p>
-                  <div className="flex items-center justify-between flex-row-reverse">
-                    <span className="text-accent font-semibold text-lg">
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-0 sm:flex-row-reverse">
+                    <span className="text-accent font-semibold text-base sm:text-lg text-center sm:text-right">
                       {product.price}
                     </span>
                     <Button 
                       variant="hero" 
                       onClick={scrollToContact}
-                      className="group-hover:shadow-gold-glow"
+                      className="group-hover:shadow-gold-glow w-full sm:w-auto min-h-[44px] touch-manipulation"
                     >
                       התאמה אישית
                     </Button>
@@ -146,12 +146,12 @@ const Collection = () => {
           ))}
         </div>
 
-        <div className="text-center">
+        <div className="text-center px-4">
           <Button 
             variant="luxury" 
             size="lg"
             onClick={scrollToContact}
-            className="text-lg px-10 py-6"
+            className="text-base sm:text-lg px-6 sm:px-10 py-6 w-full sm:w-auto min-h-[48px] touch-manipulation"
           >
             התחילו את מסע ההתאמה האישית שלכם
           </Button>

@@ -24,21 +24,21 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in-up">
-        <h1 className="font-playfair text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-primary-foreground mb-6 tracking-tight">
+        <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-primary-foreground mb-4 sm:mb-6 tracking-tight leading-tight">
           עין אל ציון
         </h1>
-        <p className="font-playfair text-2xl sm:text-3xl md:text-4xl text-accent italic mb-8">
+        <p className="font-playfair text-xl sm:text-2xl md:text-3xl lg:text-4xl text-accent italic mb-6 sm:mb-8">
           Signez votre regard
         </p>
-        <p className="text-lg sm:text-xl text-primary-foreground/90 max-w-2xl mx-auto mb-12 leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4">
           גלו את אומנות המשקפיים המותאמים אישית. כל מסגרת מעוצבת כדי לשקף את הסגנון והחזון הייחודיים שלכם.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center px-4">
           <Button 
             variant="luxury" 
             size="lg"
             onClick={scrollToCollection}
-            className="text-lg px-8 py-6"
+            className="text-base sm:text-lg px-6 py-6 w-full sm:w-auto min-h-[48px] touch-manipulation"
           >
             גלו את הקולקציה
           </Button>
@@ -49,7 +49,7 @@ const Hero = () => {
               const element = document.getElementById("contact");
               if (element) element.scrollIntoView({ behavior: "smooth" });
             }}
-            className="text-lg px-8 py-6"
+            className="text-base sm:text-lg px-6 py-6 w-full sm:w-auto min-h-[48px] touch-manipulation"
           >
             קביעת פגישת ייעוץ
           </Button>
