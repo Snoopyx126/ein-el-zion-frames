@@ -3,66 +3,77 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check } from "lucide-react";
 
+import kiwiImg from "@/assets/lenses/kiwi.png";
+import framboiseImg from "@/assets/lenses/framboise.png";
+import fraiseImg from "@/assets/lenses/fraise.png";
+import cassisImg from "@/assets/lenses/cassis.png";
+import bleuetsImg from "@/assets/lenses/bleuets.png";
+import myrtilleImg from "@/assets/lenses/myrtille.png";
+import pecheImg from "@/assets/lenses/peche.png";
+import quetscheImg from "@/assets/lenses/quetsche.png";
+import raisinImg from "@/assets/lenses/raisin.png";
+import mureImg from "@/assets/lenses/mure.png";
+
 const lensColors = [
   {
     id: 1,
-    name: "כחול",
-    color: "#1E90FF",
-    description: "הגנה מפני אור כחול",
+    name: "Kiwi",
+    image: kiwiImg,
+    description: "Verre photochromique",
   },
   {
     id: 2,
-    name: "אפור",
-    color: "#808080",
-    description: "ניטרלי וקלאסי",
+    name: "Framboise",
+    image: framboiseImg,
+    description: "Verre photochromique",
   },
   {
     id: 3,
-    name: "חום",
-    color: "#8B4513",
-    description: "משפר ניגודיות",
+    name: "Fraise",
+    image: fraiseImg,
+    description: "Verre photochromique",
   },
   {
     id: 4,
-    name: "ירוק",
-    color: "#228B22",
-    description: "מפחית עייפות עיניים",
+    name: "Cassis",
+    image: cassisImg,
+    description: "Verre photochromique",
   },
   {
     id: 5,
-    name: "ורוד",
-    color: "#FF69B4",
-    description: "סגנון אופנתי",
+    name: "Bleuets",
+    image: bleuetsImg,
+    description: "Verre photochromique",
   },
   {
     id: 6,
-    name: "זהב",
-    color: "#FFD700",
-    description: "יוקרתי ואלגנטי",
+    name: "Myrtille",
+    image: myrtilleImg,
+    description: "Verre photochromique",
   },
   {
     id: 7,
-    name: "כתום",
-    color: "#FF8C00",
-    description: "משפר חדות ראייה",
+    name: "Pêche",
+    image: pecheImg,
+    description: "Verre photochromique",
   },
   {
     id: 8,
-    name: "סגול",
-    color: "#9370DB",
-    description: "סגנון ייחודי",
+    name: "Quetsche",
+    image: quetscheImg,
+    description: "Verre photochromique",
   },
   {
     id: 9,
-    name: "שחור",
-    color: "#000000",
-    description: "הגנה מקסימלית מהשמש",
+    name: "Raisin",
+    image: raisinImg,
+    description: "Verre photochromique",
   },
   {
     id: 10,
-    name: "שקוף",
-    color: "#F0F0F0",
-    description: "קלאסי ונקי",
+    name: "Mûre",
+    image: mureImg,
+    description: "Verre photochromique",
   },
 ];
 
@@ -81,10 +92,10 @@ const CustomLenses = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
           <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
-            התאמה אישית של הזכוכיות
+            Verres Photochromiques
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
-            בחרו את צבע הזכוכיות המושלם עבורכם מתוך 10 אפשרויות ייחודיות
+            Choisissez votre teinte de verre photochromique - passez la souris pour voir l'activation au soleil
           </p>
         </div>
 
@@ -102,13 +113,16 @@ const CustomLenses = () => {
             >
               <CardContent className="p-4 sm:p-6 text-center">
                 <div className="relative mb-4">
-                  <div
-                    className="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto shadow-md group-hover:scale-110 transition-transform duration-300"
-                    style={{ backgroundColor: lens.color }}
-                  />
+                  <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto overflow-hidden rounded-full shadow-lg">
+                    <img
+                      src={lens.image}
+                      alt={lens.name}
+                      className="w-[200%] h-full object-cover transition-transform duration-700 ease-in-out group-hover:translate-x-[-50%]"
+                    />
+                  </div>
                   {selectedColor === lens.id && (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center animate-scale-in">
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                      <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center animate-scale-in shadow-lg">
                         <Check className="w-5 h-5 text-white" />
                       </div>
                     </div>
@@ -134,8 +148,8 @@ const CustomLenses = () => {
             className="text-base sm:text-lg px-6 sm:px-10 py-6 w-full sm:w-auto min-h-[48px] touch-manipulation disabled:opacity-50"
           >
             {selectedColor
-              ? `המשיכו עם ${lensColors.find((l) => l.id === selectedColor)?.name}`
-              : "בחרו צבע זכוכיות"}
+              ? `Continuer avec ${lensColors.find((l) => l.id === selectedColor)?.name}`
+              : "Choisissez une teinte"}
           </Button>
         </div>
       </div>
