@@ -117,7 +117,7 @@ const CustomLenses = () => {
                     <img
                       src={lens.image}
                       alt={lens.name}
-                      className="w-[200%] h-full object-cover transition-transform duration-700 ease-in-out group-hover:translate-x-[-50%]"
+                      className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-125"
                     />
                   </div>
                   {selectedColor === lens.id && (
