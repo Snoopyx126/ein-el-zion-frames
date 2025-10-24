@@ -18,63 +18,63 @@ import mureImg from "@/assets/lenses/mure.png";
 const lensColors = [
   {
     id: 1,
-    name: "Kiwi",
+    name: "קיווי",
     image: kiwiImg,
-    description: "Verre photochromique",
+    description: "עדשה פוטוכרומית",
   },
   {
     id: 2,
-    name: "Framboise",
-    image: framboiseImg,
-    description: "Verre photochromique",
+    name: "אפרסק",
+    image: pecheImg,
+    description: "עדשה פוטוכרומית",
   },
   {
     id: 3,
-    name: "Fraise",
+    name: "תות שדה",
     image: fraiseImg,
-    description: "Verre photochromique",
+    description: "עדשה פוטוכרומית",
   },
   {
     id: 4,
-    name: "Cassis",
-    image: cassisImg,
-    description: "Verre photochromique",
+    name: "פטל",
+    image: framboiseImg,
+    description: "עדשה פוטוכרומית",
   },
   {
     id: 5,
-    name: "Bleuets",
-    image: bleuetsImg,
-    description: "Verre photochromique",
+    name: "דומדמניות",
+    image: cassisImg,
+    description: "עדשה פוטוכרומית",
   },
   {
     id: 6,
-    name: "Myrtille",
-    image: myrtilleImg,
-    description: "Verre photochromique",
+    name: "אוכמניות",
+    image: bleuetsImg,
+    description: "עדשה פוטוכרומית",
   },
   {
     id: 7,
-    name: "Pêche",
-    image: pecheImg,
-    description: "Verre photochromique",
+    name: "אוכמנית",
+    image: myrtilleImg,
+    description: "עדשה פוטוכרומית",
   },
   {
     id: 8,
-    name: "Quetsche",
+    name: "שזיף",
     image: quetscheImg,
-    description: "Verre photochromique",
+    description: "עדשה פוטוכרומית",
   },
   {
     id: 9,
-    name: "Raisin",
+    name: "ענבים",
     image: raisinImg,
-    description: "Verre photochromique",
+    description: "עדשה פוטוכרומית",
   },
   {
     id: 10,
-    name: "Mûre",
+    name: "תות שחור",
     image: mureImg,
-    description: "Verre photochromique",
+    description: "עדשה פוטוכרומית",
   },
 ];
 
@@ -94,10 +94,10 @@ const CustomLenses = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
           <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
-            Verres Photochromiques
+            עדשות פוטוכרומיות
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
-            Choisissez votre teinte de verre photochromique - passez la souris pour voir l'activation au soleil
+            בחרו את הגוון המועדף עליכם - העבירו את העכבר כדי לראות את ההפעלה בשמש
           </p>
         </div>
 
@@ -156,8 +156,8 @@ const CustomLenses = () => {
             className="text-base sm:text-lg px-6 sm:px-10 py-6 w-full sm:w-auto min-h-[48px] touch-manipulation disabled:opacity-50"
           >
             {selectedColor
-              ? `Continuer avec ${lensColors.find((l) => l.id === selectedColor)?.name}`
-              : "Choisissez une teinte"}
+              ? `המשך עם ${lensColors.find((l) => l.id === selectedColor)?.name}`
+              : "בחרו גוון"}
           </Button>
         </div>
       </div>

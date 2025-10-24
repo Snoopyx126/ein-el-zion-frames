@@ -12,6 +12,8 @@ import product7 from "@/assets/product-7.jpg";
 import product8 from "@/assets/product-8.jpg";
 import product9 from "@/assets/product-9.jpg";
 import product10 from "@/assets/product-10.jpg";
+import product11 from "@/assets/product-11.jpg";
+import product12 from "@/assets/product-12.jpg";
 
 const products = [
   {
@@ -82,6 +84,20 @@ const products = [
     name: "קלאבמאסטר שחור",
     description: "משקפי קלאבמאסטר קלאסיים עם מסגרת שחורה וזהב",
     image: product10,
+    price: "התאמה אישית",
+  },
+  {
+    id: 11,
+    name: "מרובע כסוף מעוטר",
+    description: "משקפיים מרובעים עם עיטורי חריטה ומסגרת כסף מעודנת",
+    image: product11,
+    price: "התאמה אישית",
+  },
+  {
+    id: 12,
+    name: "מרובע כסוף קלאסי",
+    description: "משקפיים מרובעים עם פרטי חריטה ומסגרת כסף אלגנטית",
+    image: product12,
     price: "התאמה אישית",
   },
 ];
