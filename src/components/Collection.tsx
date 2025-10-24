@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import ImageZoomDialog from "@/components/ImageZoomDialog";
 import product1 from "@/assets/product-1.jpg";
 import product2 from "@/assets/product-2.jpg";
 import product3 from "@/assets/product-3.jpg";
@@ -85,6 +87,8 @@ const products = [
 ];
 
 const Collection = () => {
+  const [zoomedImage, setZoomedImage] = useState<{ src: string; alt: string } | null>(null);
+
   const scrollToContact = () => {
     const element = document.getElementById("contact");
     if (element) {
@@ -113,7 +117,10 @@ const Collection = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <CardContent className="p-0">
-                <div className="relative overflow-hidden aspect-square">
+                <div 
+                  className="relative overflow-hidden aspect-square cursor-pointer"
+                  onClick={() => setZoomedImage({ src: product.image, alt: product.name })}
+                >
                   <img
                     src={product.image}
                     alt={product.name}
@@ -157,6 +164,13 @@ const Collection = () => {
           </Button>
         </div>
       </div>
+
+      <ImageZoomDialog
+        isOpen={!!zoomedImage}
+        onClose={() => setZoomedImage(null)}
+        imageSrc={zoomedImage?.src || ""}
+        imageAlt={zoomedImage?.alt || ""}
+      />
     </section>
   );
 };

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import ImageZoomDialog from "@/components/ImageZoomDialog";
 
 import kiwiImg from "@/assets/lenses/kiwi.png";
 import framboiseImg from "@/assets/lenses/framboise.png";
@@ -79,6 +80,7 @@ const lensColors = [
 
 const CustomLenses = () => {
   const [selectedColor, setSelectedColor] = useState<number | null>(null);
+  const [zoomedImage, setZoomedImage] = useState<{ src: string; alt: string } | null>(null);
 
   const scrollToContact = () => {
     const element = document.getElementById("contact");
@@ -113,11 +115,17 @@ const CustomLenses = () => {
             >
               <CardContent className="p-4 sm:p-6 text-center">
                 <div className="relative mb-4">
-                  <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto overflow-hidden rounded-full shadow-lg">
+                  <div 
+                    className="w-24 h-24 sm:w-32 sm:h-32 mx-auto overflow-hidden rounded-full shadow-lg cursor-pointer"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setZoomedImage({ src: lens.image, alt: lens.name });
+                    }}
+                  >
                     <img
                       src={lens.image}
                       alt={lens.name}
-                      className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-125"
+                      className="w-full h-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-110 p-2"
                     />
                   </div>
                   {selectedColor === lens.id && (
@@ -153,6 +161,13 @@ const CustomLenses = () => {
           </Button>
         </div>
       </div>
+
+      <ImageZoomDialog
+        isOpen={!!zoomedImage}
+        onClose={() => setZoomedImage(null)}
+        imageSrc={zoomedImage?.src || ""}
+        imageAlt={zoomedImage?.alt || ""}
+      />
     </section>
   );
 };
