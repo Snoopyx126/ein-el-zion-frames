@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check } from "lucide-react";
-import ImageZoomDialog from "@/components/ImageZoomDialog";
 
 import kiwiImg from "@/assets/lenses/kiwi.png";
 import framboiseImg from "@/assets/lenses/framboise.png";
@@ -18,69 +17,68 @@ import mureImg from "@/assets/lenses/mure.png";
 const lensColors = [
   {
     id: 1,
-    name: "קיווי",
+    name: "קיוי",
     image: kiwiImg,
-    description: "עדשה פוטוכרומית",
+    description: "עדשות פוטוכרומיות",
   },
   {
     id: 2,
-    name: "אפרסק",
-    image: pecheImg,
-    description: "עדשה פוטוכרומית",
+    name: "פּטל",
+    image: framboiseImg,
+    description: "עדשות פוטוכרומיות",
   },
   {
     id: 3,
-    name: "תות שדה",
+    name: "תות",
     image: fraiseImg,
-    description: "עדשה פוטוכרומית",
+    description: "עדשות פוטוכרומיות",
   },
   {
     id: 4,
-    name: "פטל",
-    image: framboiseImg,
-    description: "עדשה פוטוכרומית",
+    name: "ענבי שועל",
+    image: cassisImg,
+    description: "עדשות פוטוכרומיות",
   },
   {
     id: 5,
-    name: "דומדמניות",
-    image: cassisImg,
-    description: "עדשה פוטוכרומית",
+    name: "אוכמניות",
+    image: bleuetsImg,
+    description: "עדשות פוטוכרומיות",
   },
   {
     id: 6,
-    name: "אוכמניות",
-    image: bleuetsImg,
-    description: "עדשה פוטוכרומית",
+    name: "אוכמנית",
+    image: myrtilleImg,
+    description: "עדשות פוטוכרומיות",
   },
   {
     id: 7,
-    name: "אוכמנית",
-    image: myrtilleImg,
-    description: "עדשה פוטוכרומית",
+    name: "דיג",
+    image: pecheImg,
+    description: "עדשות פוטוכרומיות",
   },
   {
     id: 8,
-    name: "שזיף",
+    name: "לגזום",
     image: quetscheImg,
-    description: "עדשה פוטוכרומית",
+    description: "עדשות פוטוכרומיות",
   },
   {
     id: 9,
     name: "ענבים",
     image: raisinImg,
-    description: "עדשה פוטוכרומית",
+    description: "עדשות פוטוכרומיות",
   },
   {
     id: 10,
-    name: "תות שחור",
+    name: "בלקברי",
     image: mureImg,
-    description: "עדשה פוטוכרומית",
+    description: "עדשות פוטוכרומיות",
   },
 ];
 
 const CustomLenses = () => {
   const [selectedColor, setSelectedColor] = useState<number | null>(null);
-  const [zoomedImage, setZoomedImage] = useState<{ src: string; alt: string } | null>(null);
 
   const scrollToContact = () => {
     const element = document.getElementById("contact");
@@ -97,7 +95,7 @@ const CustomLenses = () => {
             עדשות פוטוכרומיות
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
-            בחרו את הגוון המועדף עליכם - העבירו את העכבר כדי לראות את ההפעלה בשמש
+            בחר את גוון העדשה הפוטוכרומי שלך
           </p>
         </div>
 
@@ -115,17 +113,11 @@ const CustomLenses = () => {
             >
               <CardContent className="p-4 sm:p-6 text-center">
                 <div className="relative mb-4">
-                  <div 
-                    className="w-24 h-24 sm:w-32 sm:h-32 mx-auto overflow-hidden rounded-full shadow-lg cursor-pointer"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setZoomedImage({ src: lens.image, alt: lens.name });
-                    }}
-                  >
+                  <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto overflow-hidden rounded-full shadow-lg">
                     <img
                       src={lens.image}
                       alt={lens.name}
-                      className="w-full h-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-110 p-2"
+                      className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-125"
                     />
                   </div>
                   {selectedColor === lens.id && (
@@ -156,18 +148,11 @@ const CustomLenses = () => {
             className="text-base sm:text-lg px-6 sm:px-10 py-6 w-full sm:w-auto min-h-[48px] touch-manipulation disabled:opacity-50"
           >
             {selectedColor
-              ? `המשך עם ${lensColors.find((l) => l.id === selectedColor)?.name}`
-              : "בחרו גוון"}
+              ? `להמשיך עם ${lensColors.find((l) => l.id === selectedColor)?.name}`
+              : "בחר גוון"}
           </Button>
         </div>
       </div>
-
-      <ImageZoomDialog
-        isOpen={!!zoomedImage}
-        onClose={() => setZoomedImage(null)}
-        imageSrc={zoomedImage?.src || ""}
-        imageAlt={zoomedImage?.alt || ""}
-      />
     </section>
   );
 };

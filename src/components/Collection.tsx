@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import ImageZoomDialog from "@/components/ImageZoomDialog";
 import product1 from "@/assets/product-1.jpg";
 import product2 from "@/assets/product-2.jpg";
 import product3 from "@/assets/product-3.jpg";
@@ -18,93 +16,92 @@ import product12 from "@/assets/product-12.jpg";
 const products = [
   {
     id: 1,
-    name: "אוויאטור זהב",
-    description: "סגנון אוויאטור קלאסי עם מסגרת מתכת זהב איכותית",
+    name: "יהלום חלק",
+    description: "",
     image: product1,
     price: "התאמה אישית",
   },
   {
     id: 2,
-    name: "וויפארר צבי",
-    description: "עיצוב וויפארר נצחי עם דוגמת צב אלגנטית",
+    name: "טורנדו יהלומים",
+    description: "",
     image: product2,
     price: "התאמה אישית",
   },
   {
     id: 3,
-    name: "עגול זהב אופטי",
-    description: "מסגרת עגולה מתוחכמת מושלמת לכל אירוע",
+    name: "יהלום פנימי חלק",
+    description: "",
     image: product3,
     price: "התאמה אישית",
   },
   {
     id: 4,
-    name: "קט-איי שחור",
-    description: "משקפי קט-איי אלגנטיים עם פרטי זהב מעודנים",
+    name: "מכת יהלומים",
+    description: "",
     image: product4,
     price: "התאמה אישית",
   },
   {
     id: 5,
-    name: "מלבני כסוף",
-    description: "משקפיים מלבניים מודרניים עם מסגרת כסף דקה",
+    name: "גל יהלום",
+    description: "",
     image: product5,
     price: "התאמה אישית",
   },
   {
     id: 6,
-    name: "ספורטיבי שחור",
-    description: "משקפי שמש ספורטיביים עם עדשות כחולות מראה",
+    name: "יהלום מעורב",
+    description: "",
     image: product6,
     price: "התאמה אישית",
   },
   {
     id: 7,
-    name: "עגול עור חום",
-    description: "משקפיים עגולים וינטאג' עם עטיפת עור חום",
+    name: "יהלום מבריק",
+    description: "",
     image: product7,
     price: "התאמה אישית",
   },
   {
     id: 8,
-    name: "מרובע שקוף",
-    description: "משקפי שמש גדולים במסגרת קריסטל שקופה",
+    name: "יהלום אריה",
+    description: "",
     image: product8,
     price: "התאמה אישית",
   },
   {
     id: 9,
-    name: "משושה רוז גולד",
-    description: "משקפי שמש רטרו משושים עם עדשות ורודות",
+    name: "יהלום קר",
+    description: "",
     image: product9,
     price: "התאמה אישית",
   },
   {
     id: 10,
-    name: "קלאבמאסטר שחור",
-    description: "משקפי קלאבמאסטר קלאסיים עם מסגרת שחורה וזהב",
+    name: "קו יהלומים",
+    description: "",
     image: product10,
     price: "התאמה אישית",
   },
   {
     id: 11,
-    name: "מרובע כסוף מעוטר",
-    description: "משקפיים מרובעים עם עיטורי חריטה ומסגרת כסף מעודנת",
+    name: "יהלום בהתאמה אישית",
+    description: "",
     image: product11,
     price: "התאמה אישית",
   },
   {
     id: 12,
-    name: "מרובע כסוף קלאסי",
-    description: "משקפיים מרובעים עם פרטי חריטה ומסגרת כסף אלגנטית",
+    name: "יהלום בהתאמה אישית",
+    description: "",
     image: product12,
     price: "התאמה אישית",
   },
+
 ];
 
 const Collection = () => {
-  const [zoomedImage, setZoomedImage] = useState<{ src: string; alt: string } | null>(null);
-
   const scrollToContact = () => {
     const element = document.getElementById("contact");
     if (element) {
@@ -133,10 +130,7 @@ const Collection = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <CardContent className="p-0">
-                <div 
-                  className="relative overflow-hidden aspect-square cursor-pointer"
-                  onClick={() => setZoomedImage({ src: product.image, alt: product.name })}
-                >
+                <div className="relative overflow-hidden aspect-square">
                   <img
                     src={product.image}
                     alt={product.name}
@@ -180,13 +174,6 @@ const Collection = () => {
           </Button>
         </div>
       </div>
-
-      <ImageZoomDialog
-        isOpen={!!zoomedImage}
-        onClose={() => setZoomedImage(null)}
-        imageSrc={zoomedImage?.src || ""}
-        imageAlt={zoomedImage?.alt || ""}
-      />
     </section>
   );
 };
