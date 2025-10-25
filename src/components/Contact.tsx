@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Mail, MapPin } from "lucide-react";
 import { MessageCircle } from "lucide-react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,8 +15,9 @@ const Contact = () => {
     phone: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -24,16 +26,35 @@ const Contact = () => {
       return;
     }
 
-    // Here you would typically send the form data to your backend
-    toast.success("תודה! ניצור איתכם קשר בקרוב לתיאום פגישת הייעוץ.");
-    
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        },
+      });
+
+      if (error) throw error;
+
+      toast.success("תודה! ההודעה נשלחה בהצלחה. ניצור איתכם קשר בקרוב.");
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error sending contact email:", error);
+      toast.error("אירעה שגיאה בשליחת ההודעה. אנא נסו שוב.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -131,8 +152,9 @@ const Contact = () => {
                   variant="luxury" 
                   size="lg" 
                   className="w-full text-base sm:text-lg min-h-[48px] touch-manipulation"
+                  disabled={isSubmitting}
                 >
-                  קביעת פגישת ייעוץ
+                  {isSubmitting ? "שולח..." : "קביעת פגישת ייעוץ"}
                 </Button>
               </form>
             </CardContent>
@@ -201,8 +223,7 @@ const Contact = () => {
               <p className="text-sm text-muted-foreground">
                 <strong className="text-foreground">שעות פגישות ייעוץ:</strong><br />
                 ראשון - חמישי: 10:00 - 18:00<br />
-                שישי: 10:00 - 14:00<br />
-                שבת: לפי תיאום מראש בלבד
+                שישי - שבת: סגור
               </p>
             </div>
           </div>
