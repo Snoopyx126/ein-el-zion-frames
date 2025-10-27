@@ -19,13 +19,18 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center gap-3">
-            <img 
-              src={logo} 
-              alt="L'atelier des Arts Logo" 
-              className="h-12 w-auto object-contain cursor-pointer hover:opacity-80 transition-opacity"
+          <div className="flex-shrink-0 flex items-center">
+            <button 
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            />
+              className="group"
+            >
+              <img 
+                src={logo} 
+                alt="L'atelier des Arts Logo" 
+                className="h-10 w-auto object-contain transition-all duration-300 group-hover:scale-105 filter"
+                style={{ mixBlendMode: 'multiply' }}
+              />
+            </button>
           </div>
 
           {/* Desktop Navigation */}

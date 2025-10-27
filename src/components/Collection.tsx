@@ -18,87 +18,87 @@ import product12 from "@/assets/product-12.jpg";
 const products = [
   {
     id: 1,
-    name: "יהלום חלק",
+    name: "Diamant lisse",
     description: "",
     image: product1,
-    price: "התאמה אישית",
+    price: "Sur mesure",
   },
   {
     id: 2,
-    name: "טורנדו יהלומים",
+    name: "Tornade diamants",
     description: "",
     image: product2,
-    price: "התאמה אישית",
+    price: "Sur mesure",
   },
   {
     id: 3,
-    name: "יהלום פנימי חלק",
+    name: "Diamant intérieur lisse",
     description: "",
     image: product3,
-    price: "התאמה אישית",
+    price: "Sur mesure",
   },
   {
     id: 4,
-    name: "מכת יהלומים",
+    name: "Choc de diamants",
     description: "",
     image: product4,
-    price: "התאמה אישית",
+    price: "Sur mesure",
   },
   {
     id: 5,
-    name: "גל יהלום",
+    name: "Vague diamant",
     description: "",
     image: product5,
-    price: "התאמה אישית",
+    price: "Sur mesure",
   },
   {
     id: 6,
-    name: "יהלום מעורב",
+    name: "Diamant mixte",
     description: "",
     image: product6,
-    price: "התאמה אישית",
+    price: "Sur mesure",
   },
   {
     id: 7,
-    name: "יהלום מבריק",
+    name: "Diamant brillant",
     description: "",
     image: product7,
-    price: "התאמה אישית",
+    price: "Sur mesure",
   },
   {
     id: 8,
-    name: "יהלום אריה",
+    name: "Diamant lion",
     description: "",
     image: product8,
-    price: "התאמה אישית",
+    price: "Sur mesure",
   },
   {
     id: 9,
-    name: "יהלום קר",
+    name: "Diamant froid",
     description: "",
     image: product9,
-    price: "התאמה אישית",
+    price: "Sur mesure",
   },
   {
     id: 10,
-    name: "קו יהלומים",
+    name: "Ligne diamants",
     description: "",
     image: product10,
-    price: "התאמה אישית",
+    price: "Sur mesure",
   },
   {
     id: 11,
-    name: "יהלום בהתאמה אישית",
+    name: "Diamant personnalisé",
     description: "",
     image: product11,
-    price: "התאמה אישית",
+    price: "Sur mesure",
   },
   {
     id: 12,
-    name: "יהלום בהתאמה אישית",
+    name: "Diamant personnalisé",
     description: "",
     image: product12,
-    price: "התאמה אישית",
+    price: "Sur mesure",
   },
 
 ];
@@ -130,7 +130,7 @@ const Collection = () => {
           {products.map((product, index) => (
             <Card 
               key={product.id} 
-              className="group hover:shadow-luxury transition-all duration-500 border-border overflow-hidden animate-scale-in"
+              className="group hover:shadow-luxury transition-all duration-500 border border-border hover:border-primary/30 overflow-hidden animate-scale-in bg-card"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <CardContent className="p-0">
@@ -145,24 +145,24 @@ const Collection = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <div className="p-4 sm:p-6 text-right">
+                <div className="p-4 sm:p-6">
                   <h3 className="font-playfair text-xl sm:text-2xl font-semibold text-foreground mb-2">
                     {product.name}
                   </h3>
                   <p className="text-sm sm:text-base text-muted-foreground mb-4">
                     {product.description}
                   </p>
-                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-0 sm:flex-row-reverse">
-                    <span className="text-accent font-semibold text-base sm:text-lg text-center sm:text-right">
-                      {product.price}
-                    </span>
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
                     <Button 
-                      variant="hero" 
+                      variant="outline" 
                       onClick={scrollToContact}
-                      className="group-hover:shadow-gold-glow w-full sm:w-auto min-h-[44px] touch-manipulation"
+                      className="w-full sm:w-auto min-h-[44px] touch-manipulation"
                     >
                       Personnaliser
                     </Button>
+                    <span className="text-primary font-bold text-base sm:text-lg text-center sm:text-left">
+                      {product.price}
+                    </span>
                   </div>
                 </div>
               </CardContent>

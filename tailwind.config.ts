@@ -131,12 +131,13 @@ export default {
       },
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',
-        'gradient-gold': 'var(--gradient-gold)',
+        'gradient-secondary': 'var(--gradient-secondary)',
         'gradient-overlay': 'var(--gradient-overlay)',
       },
       boxShadow: {
         'luxury': 'var(--shadow-luxury)',
-        'gold-glow': 'var(--shadow-gold-glow)',
+        'elegant': 'var(--shadow-elegant)',
+        'card': 'var(--shadow-card)',
       },
     },
   },

@@ -9,54 +9,55 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    --foreground: 0 0% 5%;
 
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover-foreground: 0 0% 5%;
 
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 10%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 0 0% 95%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 0 0% 92%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 0 0% 20%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 85%;
-    --input: 0 0% 85%;
-    --ring: 0 0% 20%;
+    --border: 0 0% 88%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 15%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Custom brand colors - Black & White theme */
-    --brand-black: 0 0% 0%;
-    --brand-white: 0 0% 100%;
-    --brand-gray-light: 0 0% 95%;
-    --brand-gray-dark: 0 0% 20%;
-    --brand-gray-medium: 0 0% 60%;
+    /* Custom brand colors - Elegant Black & White */
+    --brand-black: 0 0% 10%;
+    --brand-white: 0 0% 98%;
+    --brand-gray-light: 0 0% 96%;
+    --brand-gray-dark: 0 0% 15%;
+    --brand-gray-medium: 0 0% 50%;
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(0 0% 0%) 0%, hsl(0 0% 20%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(0 0% 30%) 0%, hsl(0 0% 50%) 100%);
-    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(0 0% 0% / 0.8) 100%);
+    /* Gradients - Subtle elegance */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 10%) 0%, hsl(0 0% 25%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(0 0% 15%) 0%, hsl(0 0% 5%) 100%);
+    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(0 0% 0% / 0.7) 100%);
     
-    /* Shadows */
-    --shadow-luxury: 0 20px 60px -15px hsl(0 0% 0% / 0.3);
-    --shadow-gold-glow: 0 8px 32px -8px hsl(0 0% 0% / 0.4);
+    /* Shadows - More defined */
+    --shadow-luxury: 0 10px 40px -10px hsl(0 0% 0% / 0.25);
+    --shadow-elegant: 0 4px 20px -2px hsl(0 0% 0% / 0.15);
+    --shadow-card: 0 2px 10px -1px hsl(0 0% 0% / 0.1);
     
     /* Transitions */
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-spring: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .dark {

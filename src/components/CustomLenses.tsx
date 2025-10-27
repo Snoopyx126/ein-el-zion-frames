@@ -18,63 +18,63 @@ import mureImg from "@/assets/lenses/mure.png";
 const lensColors = [
   {
     id: 1,
-    name: "קיוי",
+    name: "Kiwi",
     image: kiwiImg,
-    description: "עדשות פוטוכרומיות",
+    description: "Verres photochromiques",
   },
   {
     id: 2,
-    name: "פּטל",
+    name: "Framboise",
     image: framboiseImg,
-    description: "עדשות פוטוכרומיות",
+    description: "Verres photochromiques",
   },
   {
     id: 3,
-    name: "תות",
+    name: "Fraise",
     image: fraiseImg,
-    description: "עדשות פוטוכרומיות",
+    description: "Verres photochromiques",
   },
   {
     id: 4,
-    name: "ענבי שועל",
+    name: "Cassis",
     image: cassisImg,
-    description: "עדשות פוטוכרומיות",
+    description: "Verres photochromiques",
   },
   {
     id: 5,
-    name: "אוכמניות",
+    name: "Bleuets",
     image: bleuetsImg,
-    description: "עדשות פוטוכרומיות",
+    description: "Verres photochromiques",
   },
   {
     id: 6,
-    name: "אוכמנית",
+    name: "Myrtille",
     image: myrtilleImg,
-    description: "עדשות פוטוכרומיות",
+    description: "Verres photochromiques",
   },
   {
     id: 7,
-    name: "דיג",
+    name: "Pêche",
     image: pecheImg,
-    description: "עדשות פוטוכרומיות",
+    description: "Verres photochromiques",
   },
   {
     id: 8,
-    name: "לגזום",
+    name: "Quetsche",
     image: quetscheImg,
-    description: "עדשות פוטוכרומיות",
+    description: "Verres photochromiques",
   },
   {
     id: 9,
-    name: "ענבים",
+    name: "Raisin",
     image: raisinImg,
-    description: "עדשות פוטוכרומיות",
+    description: "Verres photochromiques",
   },
   {
     id: 10,
-    name: "בלקברי",
+    name: "Mûre",
     image: mureImg,
-    description: "עדשות פוטוכרומיות",
+    description: "Verres photochromiques",
   },
 ];
 
@@ -101,22 +101,22 @@ const CustomLenses = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8 mb-12">
           {lensColors.map((lens, index) => (
             <Card
               key={lens.id}
-              className={`group cursor-pointer hover:shadow-luxury transition-all duration-500 border-2 animate-scale-in ${
+              className={`group cursor-pointer hover:shadow-luxury transition-all duration-500 border-2 animate-scale-in bg-card ${
                 selectedColor === lens.id
-                  ? "border-accent shadow-luxury"
-                  : "border-border"
+                  ? "border-primary shadow-luxury ring-2 ring-primary/20"
+                  : "border-border hover:border-primary/40"
               }`}
               style={{ animationDelay: `${index * 50}ms` }}
               onClick={() => setSelectedColor(lens.id)}
             >
-              <CardContent className="p-4 sm:p-6 text-center">
+              <CardContent className="p-6 text-center">
                 <div className="relative mb-4">
                   <div 
-                    className="w-24 h-24 sm:w-32 sm:h-32 mx-auto overflow-hidden rounded-full shadow-lg cursor-pointer"
+                    className="w-28 h-28 sm:w-36 sm:h-36 mx-auto overflow-hidden rounded-2xl shadow-card cursor-pointer bg-white/50 backdrop-blur-sm border border-border/50"
                     onClick={(e) => {
                       e.stopPropagation();
                       setZoomImage({ src: lens.image, alt: lens.name });
@@ -125,21 +125,21 @@ const CustomLenses = () => {
                     <img
                       src={lens.image}
                       alt={lens.name}
-                      className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-125"
+                      className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 p-2"
                     />
                   </div>
                   {selectedColor === lens.id && (
-                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                      <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center animate-scale-in shadow-lg">
-                        <Check className="w-5 h-5 text-white" />
+                    <div className="absolute -top-2 -right-2 z-10">
+                      <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center animate-scale-in shadow-elegant border-2 border-background">
+                        <Check className="w-4 h-4 text-primary-foreground" strokeWidth={3} />
                       </div>
                     </div>
                   )}
                 </div>
-                <h3 className="font-playfair text-lg sm:text-xl font-semibold text-foreground mb-2">
+                <h3 className="font-playfair text-base sm:text-lg font-semibold text-foreground mb-1">
                   {lens.name}
                 </h3>
-                <p className="text-xs sm:text-sm text-muted-foreground">
+                <p className="text-xs text-muted-foreground">
                   {lens.description}
                 </p>
               </CardContent>

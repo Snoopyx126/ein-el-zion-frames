@@ -12,9 +12,9 @@ const Footer = () => {
             <img 
               src={logo} 
               alt="L'atelier des Arts Logo" 
-              className="h-12 w-auto object-contain mx-auto md:mx-0 mb-3 sm:mb-4"
+              className="h-10 w-auto object-contain mx-auto md:mx-0 mb-3 sm:mb-4 brightness-0 invert"
             />
-            <p className="font-playfair text-base sm:text-lg text-primary-foreground/80 italic">
+            <p className="font-playfair text-base sm:text-lg text-primary-foreground/90 italic">
               Signez votre regard
             </p>
           </div>

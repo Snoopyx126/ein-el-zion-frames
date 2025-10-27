@@ -79,7 +79,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <Card className="shadow-luxury animate-scale-in">
+          <Card className="shadow-elegant border border-border animate-scale-in bg-card">
             <CardContent className="p-6 sm:p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -172,8 +172,8 @@ const Contact = () => {
 
             <div className="space-y-5 sm:space-y-6">
               <div className="flex items-start gap-3 sm:gap-4">
-                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent/10 flex items-center justify-center">
-                  <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
+                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/5 border border-primary/10 flex items-center justify-center">
+                  <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
                 <div className="min-w-0">
                   <h4 className="font-semibold text-foreground mb-1 text-sm sm:text-base">Email</h4>
@@ -187,8 +187,8 @@ const Contact = () => {
               </div>
 
               <div className="flex items-start gap-3 sm:gap-4">
-                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent/10 flex items-center justify-center">
-                  <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
+                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/5 border border-primary/10 flex items-center justify-center">
+                  <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-1 text-sm sm:text-base">WhatsApp</h4>
@@ -204,8 +204,8 @@ const Contact = () => {
               </div>
 
               <div className="flex items-start gap-3 sm:gap-4">
-                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent/10 flex items-center justify-center">
-                  <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
+                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/5 border border-primary/10 flex items-center justify-center">
+                  <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-1 text-sm sm:text-base">Adresse</h4>
@@ -216,11 +216,12 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="mt-8 p-6 rounded-lg bg-secondary/50 border border-border">
-              <p className="text-sm text-muted-foreground">
-                <strong className="text-foreground">Horaires de consultation :</strong><br />
-                Dimanche - Jeudi : 10:00 - 18:00<br />
-                Vendredi - Samedi : Fermé
+            <div className="mt-8 p-6 rounded-lg bg-secondary border border-border">
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                <strong className="text-foreground block mb-2">Horaires de consultation :</strong>
+                Lundi - Jeudi : 10:00 - 18:00<br />
+                Vendredi : 10:00 - 16:00<br />
+                Samedi - Dimanche : Fermé
               </p>
             </div>
           </div>

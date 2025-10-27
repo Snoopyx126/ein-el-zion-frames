@@ -39,11 +39,11 @@ const About = () => {
             return (
               <div 
                 key={index}
-                className="text-center p-6 sm:p-8 rounded-lg bg-card hover:shadow-luxury transition-all duration-500 animate-fade-in-up"
+                className="text-center p-6 sm:p-8 rounded-lg bg-card border border-border hover:border-primary/30 hover:shadow-elegant transition-all duration-500 animate-fade-in-up"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-accent/10 mb-4 sm:mb-6">
-                  <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-accent" />
+                <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-primary/5 border border-primary/10 mb-4 sm:mb-6">
+                  <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
                 </div>
                 <h3 className="font-playfair text-xl sm:text-2xl font-semibold text-foreground mb-3 sm:mb-4">
                   {feature.title}
