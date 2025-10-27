@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo-atelier.jpg";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,11 +19,11 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex items-center gap-3">
             <img 
               src={logo} 
-              alt="עין אל ציון Logo" 
-              className="h-16 w-16 rounded-full object-cover cursor-pointer hover:opacity-80 transition-opacity"
+              alt="L'atelier des Arts Logo" 
+              className="h-12 w-auto object-contain cursor-pointer hover:opacity-80 transition-opacity"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             />
           </div>
@@ -34,32 +34,32 @@ const Navigation = () => {
               onClick={() => scrollToSection("home")}
               className="text-foreground hover:text-accent transition-colors duration-300"
             >
-              בית
+              Accueil
             </button>
             <button
               onClick={() => scrollToSection("collection")}
               className="text-foreground hover:text-accent transition-colors duration-300"
             >
-              קולקציה
+              Collection
             </button>
             <button
               onClick={() => scrollToSection("about")}
               className="text-foreground hover:text-accent transition-colors duration-300"
             >
-              אודות
+              À propos
             </button>
             <button
               onClick={() => scrollToSection("contact")}
               className="text-foreground hover:text-accent transition-colors duration-300"
             >
-              צור קשר
+              Contact
             </button>
             <Button 
               variant="hero" 
               size="lg"
               onClick={() => scrollToSection("contact")}
             >
-              קביעת פגישת ייעוץ
+              Prendre rendez-vous
             </Button>
           </div>
 
@@ -81,27 +81,27 @@ const Navigation = () => {
             <div className="flex flex-col gap-4">
               <button
                 onClick={() => scrollToSection("home")}
-                className="text-right text-foreground hover:text-accent transition-colors py-2"
+                className="text-left text-foreground hover:text-accent transition-colors py-2"
               >
-                בית
+                Accueil
               </button>
               <button
                 onClick={() => scrollToSection("collection")}
-                className="text-right text-foreground hover:text-accent transition-colors py-2"
+                className="text-left text-foreground hover:text-accent transition-colors py-2"
               >
-                קולקציה
+                Collection
               </button>
               <button
                 onClick={() => scrollToSection("about")}
-                className="text-right text-foreground hover:text-accent transition-colors py-2"
+                className="text-left text-foreground hover:text-accent transition-colors py-2"
               >
-                אודות
+                À propos
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="text-right text-foreground hover:text-accent transition-colors py-2"
+                className="text-left text-foreground hover:text-accent transition-colors py-2"
               >
-                צור קשר
+                Contact
               </button>
               <Button 
                 variant="hero" 
@@ -109,7 +109,7 @@ const Navigation = () => {
                 className="w-full"
                 onClick={() => scrollToSection("contact")}
               >
-                קביעת פגישת ייעוץ
+                Prendre rendez-vous
               </Button>
             </div>
           </div>

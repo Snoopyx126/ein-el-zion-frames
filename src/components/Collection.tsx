@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import ImageZoomDialog from "@/components/ImageZoomDialog";
 import product1 from "@/assets/product-1.jpg";
 import product2 from "@/assets/product-2.jpg";
 import product3 from "@/assets/product-3.jpg";
@@ -102,6 +104,8 @@ const products = [
 ];
 
 const Collection = () => {
+  const [zoomImage, setZoomImage] = useState<{ src: string; alt: string } | null>(null);
+
   const scrollToContact = () => {
     const element = document.getElementById("contact");
     if (element) {
@@ -114,11 +118,11 @@ const Collection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
           <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
-            הקולקציה שלנו
+            Notre Collection
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
-            כל חתיכה בקולקציה שלנו מעוצבת להתאמה אישית לסגנון הייחודי שלך.
-            בחרו את העיצוב הבסיסי ואנחנו נתאים אותו במיוחד עבורכם.
+            Chaque pièce de notre collection est conçue pour être personnalisée selon votre style unique.
+            Choisissez le design de base et nous l'adapterons spécialement pour vous.
           </p>
         </div>
 
@@ -130,7 +134,10 @@ const Collection = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <CardContent className="p-0">
-                <div className="relative overflow-hidden aspect-square">
+                <div 
+                  className="relative overflow-hidden aspect-square cursor-pointer"
+                  onClick={() => setZoomImage({ src: product.image, alt: product.name })}
+                >
                   <img
                     src={product.image}
                     alt={product.name}
@@ -154,7 +161,7 @@ const Collection = () => {
                       onClick={scrollToContact}
                       className="group-hover:shadow-gold-glow w-full sm:w-auto min-h-[44px] touch-manipulation"
                     >
-                      התאמה אישית
+                      Personnaliser
                     </Button>
                   </div>
                 </div>
@@ -170,10 +177,17 @@ const Collection = () => {
             onClick={scrollToContact}
             className="text-base sm:text-lg px-6 sm:px-10 py-6 w-full sm:w-auto min-h-[48px] touch-manipulation"
           >
-            התחילו את מסע ההתאמה האישית שלכם
+            Commencez votre parcours de personnalisation
           </Button>
         </div>
       </div>
+
+      <ImageZoomDialog
+        isOpen={!!zoomImage}
+        onClose={() => setZoomImage(null)}
+        imageSrc={zoomImage?.src || ""}
+        imageAlt={zoomImage?.alt || ""}
+      />
     </section>
   );
 };

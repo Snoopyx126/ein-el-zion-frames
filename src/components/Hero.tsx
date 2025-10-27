@@ -25,13 +25,13 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in-up">
         <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-primary-foreground mb-4 sm:mb-6 tracking-tight leading-tight">
-          עין אל ציון
+          L'atelier des Arts
         </h1>
-        <p className="font-playfair text-xl sm:text-2xl md:text-3xl lg:text-4xl text-accent italic mb-6 sm:mb-8">
+        <p className="font-playfair text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/90 italic mb-6 sm:mb-8">
           Signez votre regard
         </p>
         <p className="text-base sm:text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4">
-          גלו את אומנות המשקפיים המותאמים אישית. כל מסגרת מעוצבת כדי לשקף את הסגנון והחזון הייחודיים שלכם.
+          Découvrez l'art de la lunetterie sur mesure. Chaque monture est conçue pour refléter votre style et votre vision uniques.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center px-4">
           <Button 
@@ -40,7 +40,7 @@ const Hero = () => {
             onClick={scrollToCollection}
             className="text-base sm:text-lg px-6 py-6 w-full sm:w-auto min-h-[48px] touch-manipulation"
           >
-            גלו את הקולקציה
+            Découvrir la collection
           </Button>
           <Button 
             variant="hero" 
@@ -51,7 +51,7 @@ const Hero = () => {
             }}
             className="text-base sm:text-lg px-6 py-6 w-full sm:w-auto min-h-[48px] touch-manipulation"
           >
-            קביעת פגישת ייעוץ
+            Prendre rendez-vous
           </Button>
         </div>
       </div>

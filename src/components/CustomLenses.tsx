@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import ImageZoomDialog from "@/components/ImageZoomDialog";
 
 import kiwiImg from "@/assets/lenses/kiwi.png";
 import framboiseImg from "@/assets/lenses/framboise.png";
@@ -79,6 +80,7 @@ const lensColors = [
 
 const CustomLenses = () => {
   const [selectedColor, setSelectedColor] = useState<number | null>(null);
+  const [zoomImage, setZoomImage] = useState<{ src: string; alt: string } | null>(null);
 
   const scrollToContact = () => {
     const element = document.getElementById("contact");
@@ -92,10 +94,10 @@ const CustomLenses = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
           <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
-            עדשות פוטוכרומיות
+            Verres photochromiques
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
-            בחר את גוון העדשה הפוטוכרומי שלך
+            Choisissez votre teinte de verre photochromique
           </p>
         </div>
 
@@ -113,7 +115,13 @@ const CustomLenses = () => {
             >
               <CardContent className="p-4 sm:p-6 text-center">
                 <div className="relative mb-4">
-                  <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto overflow-hidden rounded-full shadow-lg">
+                  <div 
+                    className="w-24 h-24 sm:w-32 sm:h-32 mx-auto overflow-hidden rounded-full shadow-lg cursor-pointer"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setZoomImage({ src: lens.image, alt: lens.name });
+                    }}
+                  >
                     <img
                       src={lens.image}
                       alt={lens.name}
@@ -148,11 +156,18 @@ const CustomLenses = () => {
             className="text-base sm:text-lg px-6 sm:px-10 py-6 w-full sm:w-auto min-h-[48px] touch-manipulation disabled:opacity-50"
           >
             {selectedColor
-              ? `להמשיך עם ${lensColors.find((l) => l.id === selectedColor)?.name}`
-              : "בחר גוון"}
+              ? `Continuer avec ${lensColors.find((l) => l.id === selectedColor)?.name}`
+              : "Choisir une teinte"}
           </Button>
         </div>
       </div>
+
+      <ImageZoomDialog
+        isOpen={!!zoomImage}
+        onClose={() => setZoomImage(null)}
+        imageSrc={zoomImage?.src || ""}
+        imageAlt={zoomImage?.alt || ""}
+      />
     </section>
   );
 };
